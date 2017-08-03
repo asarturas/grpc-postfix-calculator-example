@@ -1,9 +1,8 @@
 import calculator.{CalculationRequest, CalculationResult}
-import calculator.CalculatorGrpc.Calculator
 
 import scala.concurrent.Future
 
-object CalculatorService extends Calculator {
+object CalculatorService extends calculator.CalculatorGrpc.Calculator {
   def calculate(request: CalculationRequest): Future[CalculationResult] = {
     import scala.concurrent.ExecutionContext.Implicits.global
     Future {
