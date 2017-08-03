@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+// The greeting service definition.
+service Calculator {
+  rpc Calculate (CalculationRequest) returns (CalculationResult) {}
+}
+
+// The request message containing the user's name.
+message CalculationRequest {
+  repeated string expression = 1;
+}
+
+// The response message containing the greetings
+message CalculationResult {
+  string result = 1;
+}
